@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UE5_Semaforos",
+			"Path": "..\\Source\\UE5_Semaforos.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UE5_SemaforosEditor",
+			"Path": "..\\Source\\UE5_SemaforosEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

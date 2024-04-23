@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-UE5_Semaforos.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\GITHUB REPOS\UE5_Semaforo\UE5_Semaforos\UE5_Semaforos\Intermediate\Build\Win64\x64\UE5_SemaforosEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
+"D:\GITHUB REPOS\UE5_Semaforo\UE5_Semaforos\UE5_Semaforos\Intermediate\Build\Win64\x64\UnrealEditor\Development\UE5_Semaforos\UE5_Semaforos.cpp.obj"
+"D:\GITHUB REPOS\UE5_Semaforo\UE5_Semaforos\UE5_Semaforos\Intermediate\Build\Win64\x64\UnrealEditor\Development\UE5_Semaforos\Default.rc2.res"
+/OUT:"D:\GITHUB REPOS\UE5_Semaforo\UE5_Semaforos\UE5_Semaforos\Intermediate\Build\Win64\x64\UnrealEditor\Development\UE5_Semaforos\UnrealEditor-UE5_Semaforos.lib"
