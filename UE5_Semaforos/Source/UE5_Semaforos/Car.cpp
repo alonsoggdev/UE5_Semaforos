@@ -29,8 +29,6 @@ void ACar::BeginPlay()
 // Called every frame
 void ACar::Tick(float DeltaTime){
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Screen Message"));
-
 	Super::Tick(DeltaTime);
 
 	FVector NewLocation = GetActorLocation() + (direction * speed * DeltaTime);
