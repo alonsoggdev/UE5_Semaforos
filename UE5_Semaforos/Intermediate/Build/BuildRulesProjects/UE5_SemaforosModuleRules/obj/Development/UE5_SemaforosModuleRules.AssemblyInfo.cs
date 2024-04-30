@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UE5_SemaforosModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+907fc2fab04a774830909b33afe3e0b1bcd80618")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5bb7e64f6e1bb881af197d432a07a0fa418aa1d")]
 [assembly: System.Reflection.AssemblyProductAttribute("UE5_SemaforosModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UE5_SemaforosModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

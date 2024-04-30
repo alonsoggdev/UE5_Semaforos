@@ -120,6 +120,12 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\UE5_Semaforos\Car.h"/>
+    <ClCompile Include="..\..\Source\UE5_Semaforos\MyTriggerBox.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE5_Semaforos\MyTriggerBox.h"/>
     <None Include="..\..\Source\UE5_Semaforos\UE5_Semaforos.Build.cs"/>
     <ClCompile Include="..\..\Source\UE5_Semaforos\UE5_Semaforos.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
