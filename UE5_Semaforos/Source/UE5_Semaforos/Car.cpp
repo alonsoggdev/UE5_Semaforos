@@ -15,7 +15,9 @@ ACar::ACar()
 
 	if (CubeMeshAsset.Succeeded()) Cube->SetStaticMesh(CubeMeshAsset.Object);
 
-	RootComponent = Cube;
+	RootComponent = BoxCollider;
+
+	SetActorEnableCollision(true);
 
 }
 
@@ -31,12 +33,14 @@ void ACar::Tick(float DeltaTime){
 
 	Super::Tick(DeltaTime);
 
-	FVector NewLocation = GetActorLocation() + (direction * speed * DeltaTime);
+	FVector NewLocation = GetActorLocation() + (direction * speed * 10 * DeltaTime);
 	SetActorLocation(NewLocation);
 
 }
 
-void ACar::OnHit(UPrimitiveComponent* HitComp, AActor* Other, UPrimitiveComponent OtherComp) {
-	if (Other->ActorHasTag("Wall")) direction *= -1.0f;
+void ACar::OnBeginOverlap(AActor* ThisActor, AActor* OtherActor) {
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Collision"));
+
+	if (OtherActor->ActorHasTag("Wall")) direction *= -1.0f;
 }
 

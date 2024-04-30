@@ -34,6 +34,6 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void OnHit(UPrimitiveComponent* HitComp, AActor* Other, UPrimitiveComponent OtherComp);
+	void OnBeginOverlap(AActor* ThisActor, AActor* OtherActor);
 
 };
