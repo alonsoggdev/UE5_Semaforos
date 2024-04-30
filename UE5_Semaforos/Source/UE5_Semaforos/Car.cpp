@@ -2,6 +2,8 @@
 
 
 #include "Car.h"
+#include "Components/BoxComponent.h"
+
 
 // Sets default values
 ACar::ACar()
@@ -9,22 +11,22 @@ ACar::ACar()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Box Collider"));
-	Cube = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Cube Mesh"));
+	CubeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Cube Mesh"));
+	RootComponent = CubeMesh;
+
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> CubeMeshAsset(TEXT("StaticMesh'/Engine/BasicShapes/Cube.Cube'"));
+	if (CubeMeshAsset.Succeeded()) CubeMesh->SetStaticMesh(CubeMeshAsset.Object);
 
-	if (CubeMeshAsset.Succeeded()) Cube->SetStaticMesh(CubeMeshAsset.Object);
-
-	RootComponent = BoxCollider;
-
-	SetActorEnableCollision(true);
-
+	BoxCollider = CreateDefaultSubobject<UBoxComponent>(FName("Box Collider"));
+	BoxCollider->SetupAttachment(CubeMesh);
 }
 
 // Called when the game starts or when spawned
 void ACar::BeginPlay()
 {
 	Super::BeginPlay();
+	BoxCollider->OnComponentBeginOverlap.AddDynamic(this, &ACar::OverlapBegin);
+	BoxCollider->OnComponentEndOverlap.AddDynamic(this, &ACar::OverlapEnd);
 	
 }
 
@@ -38,9 +40,14 @@ void ACar::Tick(float DeltaTime){
 
 }
 
-void ACar::OnBeginOverlap(AActor* ThisActor, AActor* OtherActor) {
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Collision"));
 
-	if (OtherActor->ActorHasTag("Wall")) direction *= -1.0f;
+void ACar::OverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) {
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Collision"));
 }
+
+
+void ACar::OverlapEnd(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex) {
+	
+}
+
 

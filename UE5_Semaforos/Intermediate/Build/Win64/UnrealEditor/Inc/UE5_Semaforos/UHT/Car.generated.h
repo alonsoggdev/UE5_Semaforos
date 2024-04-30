@@ -9,6 +9,9 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef UE5_SEMAFOROS_Car_generated_h
 #error "Car.generated.h already included, missing '#pragma once' in Car.h"
 #endif
@@ -17,7 +20,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_Car_h_14_SPARSE_DATA
 #define FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_Car_h_14_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_Car_h_14_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_Car_h_14_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_Car_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOverlapEnd); \
+	DECLARE_FUNCTION(execOverlapBegin);
+
+
 #define FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_Car_h_14_ACCESSORS
 #define FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_Car_h_14_INCLASS_NO_PURE_DECLS \
 private: \
