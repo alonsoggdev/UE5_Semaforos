@@ -8,8 +8,10 @@
 /NODEFAULTLIB
 "D:\GITHUB REPOS\UE5_Semaforo\UE5_Semaforos\UE5_Semaforos\Intermediate\Build\Win64\x64\UE5_SemaforosEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
 "D:\GITHUB REPOS\UE5_Semaforo\UE5_Semaforos\UE5_Semaforos\Intermediate\Build\Win64\x64\UnrealEditor\Development\UE5_Semaforos\Car.gen.cpp.obj"
+"D:\GITHUB REPOS\UE5_Semaforo\UE5_Semaforos\UE5_Semaforos\Intermediate\Build\Win64\x64\UnrealEditor\Development\UE5_Semaforos\MyTriggerBox.gen.cpp.obj"
 "D:\GITHUB REPOS\UE5_Semaforo\UE5_Semaforos\UE5_Semaforos\Intermediate\Build\Win64\x64\UnrealEditor\Development\UE5_Semaforos\UE5_Semaforos.init.gen.cpp.obj"
 "D:\GITHUB REPOS\UE5_Semaforo\UE5_Semaforos\UE5_Semaforos\Intermediate\Build\Win64\x64\UnrealEditor\Development\UE5_Semaforos\Car.cpp.obj"
+"D:\GITHUB REPOS\UE5_Semaforo\UE5_Semaforos\UE5_Semaforos\Intermediate\Build\Win64\x64\UnrealEditor\Development\UE5_Semaforos\MyTriggerBox.cpp.obj"
 "D:\GITHUB REPOS\UE5_Semaforo\UE5_Semaforos\UE5_Semaforos\Intermediate\Build\Win64\x64\UnrealEditor\Development\UE5_Semaforos\UE5_Semaforos.cpp.obj"
 "D:\GITHUB REPOS\UE5_Semaforo\UE5_Semaforos\UE5_Semaforos\Intermediate\Build\Win64\x64\UnrealEditor\Development\UE5_Semaforos\Default.rc2.res"
 /OUT:"D:\GITHUB REPOS\UE5_Semaforo\UE5_Semaforos\UE5_Semaforos\Intermediate\Build\Win64\x64\UnrealEditor\Development\UE5_Semaforos\UnrealEditor-UE5_Semaforos.lib"

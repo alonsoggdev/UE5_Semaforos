@@ -42,6 +42,12 @@
     <ClInclude Include="..\..\Source\UE5_Semaforos\MyTriggerBox.h">
       <Filter>Source\UE5_Semaforos</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\UE5_Semaforos\TrafficLight.cpp">
+      <Filter>Source\UE5_Semaforos</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE5_Semaforos\TrafficLight.h">
+      <Filter>Source\UE5_Semaforos</Filter>
+    </ClInclude>
     <None Include="..\..\Source\UE5_Semaforos\UE5_Semaforos.Build.cs">
       <Filter>Source\UE5_Semaforos</Filter>
     </None>
