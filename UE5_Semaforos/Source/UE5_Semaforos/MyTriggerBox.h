@@ -4,6 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "Engine/TriggerBox.h"
+#include "GameFramework/Actor.h"
+#include "Components/BoxComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "Components/PrimitiveComponent.h"
+#include "Car.h"
 #include "MyTriggerBox.generated.h"
 
 /**
@@ -15,6 +20,13 @@ class UE5_SEMAFOROS_API AMyTriggerBox : public ATriggerBox
 	GENERATED_BODY()
 
 public:
+
+    class UBoxComponent* boxCollider;
+
+    FVector size = FVector(10, 10, 10);
+
+    ACar* Car;
+    
     // Sets default values for this actor's properties
     AMyTriggerBox();
 
@@ -22,11 +34,12 @@ protected:
     // Called when the game starts or when spawned
     virtual void BeginPlay() override;
 
-    // Called when this actor overlaps another actor
-    UFUNCTION()
-    void OnOverlapBegin(class AActor* OverlappedActor, class AActor* OtherActor);
-
 public:
     // Called every frame
-    virtual void Tick(float DeltaTime) override;	
+    virtual void Tick(float DeltaTime) override;
+
+    UFUNCTION()
+    virtual void NotifyActorBeginOverlap(AActor* OtherActor);
+    UFUNCTION()
+    virtual void NotifyActorEndOverlap(AActor* OtherActor);
 };

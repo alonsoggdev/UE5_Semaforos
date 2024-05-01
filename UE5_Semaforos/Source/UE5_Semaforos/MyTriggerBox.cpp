@@ -8,8 +8,12 @@ AMyTriggerBox::AMyTriggerBox()
     // Set this actor to call Tick() every frame
     PrimaryActorTick.bCanEverTick = true;
 
-    // Bind the overlap event
-    OnActorBeginOverlap.AddDynamic(this, &AMyTriggerBox::OnOverlapBegin);
+    boxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
+
+    boxCollider->SetBoxExtent(size);
+
+    boxCollider->SetupAttachment(RootComponent);
+
 }
 
 // Called when the game starts or when spawned
@@ -24,13 +28,27 @@ void AMyTriggerBox::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 }
 
-void AMyTriggerBox::OnOverlapBegin(class AActor* OverlappedActor, class AActor* OtherActor)
+void AMyTriggerBox::NotifyActorBeginOverlap(AActor* OtherActor)
 {
-    // Check if the overlapped actor is the object you want to react to
-    if (OtherActor && OtherActor != this)
-    {
-        // Perform actions when the object overlaps with this trigger box
-        // For example, print a message
-        UE_LOG(LogTemp, Warning, TEXT("Object overlapped with trigger box!"));
-    }
+	if (GEngine != nullptr)
+		GEngine->AddOnScreenDebugMessage(-1, 5, FColor::White, TEXT("Hello from Codded Trigger to ") + OtherActor->GetName());
+
+	Car = Cast<ACar>(OtherActor);
+
+	if (Car) {
+
+		GEngine->AddOnScreenDebugMessage(-1, 5, FColor::White, TEXT("Cast Pedestrian ") + OtherActor->GetName());
+
+		Car->direction *= -1;
+
+		GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, FString::Printf(TEXT("Direction: %s"), *Car->direction.ToString()));
+	}
+
 }
+
+void AMyTriggerBox::NotifyActorEndOverlap(AActor* OtherActor)
+{
+	if (GEngine != nullptr)
+		GEngine->AddOnScreenDebugMessage(-1, 5, FColor::White, TEXT("Bye from Codded Trigger to ") + OtherActor->GetName());
+}
+

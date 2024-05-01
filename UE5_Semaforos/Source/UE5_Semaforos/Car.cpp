@@ -11,27 +11,35 @@ ACar::ACar()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	//RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+
 	CubeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Cube Mesh"));
-	RootComponent = CubeMesh;
-
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> CubeMeshAsset(TEXT("StaticMesh'/Engine/BasicShapes/Cube.Cube'"));
-	if (CubeMeshAsset.Succeeded()) CubeMesh->SetStaticMesh(CubeMeshAsset.Object);
-
-	BoxCollider = CreateDefaultSubobject<UBoxComponent>(FName("Box Collider"));
-	BoxCollider->SetupAttachment(CubeMesh);
+	CubeMesh->SetupAttachment(RootComponent);
+	CubeMesh->SetSimulatePhysics(true);
+	
+	// Asignar la malla estática al componente CubeMesh
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> CubeMeshAsset(TEXT("/Engine/BasicShapes/Cube"));
+	if (CubeMeshAsset.Succeeded())
+	{
+		CubeMesh->SetStaticMesh(CubeMeshAsset.Object);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Failed to load cube mesh asset!"));
+	}
 }
 
 // Called when the game starts or when spawned
 void ACar::BeginPlay()
 {
 	Super::BeginPlay();
-	BoxCollider->OnComponentBeginOverlap.AddDynamic(this, &ACar::OverlapBegin);
-	BoxCollider->OnComponentEndOverlap.AddDynamic(this, &ACar::OverlapEnd);
 	
 }
 
 // Called every frame
 void ACar::Tick(float DeltaTime){
+
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Console"));
 
 	Super::Tick(DeltaTime);
 
@@ -39,15 +47,4 @@ void ACar::Tick(float DeltaTime){
 	SetActorLocation(NewLocation);
 
 }
-
-
-void ACar::OverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) {
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Collision"));
-}
-
-
-void ACar::OverlapEnd(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex) {
-	
-}
-
 

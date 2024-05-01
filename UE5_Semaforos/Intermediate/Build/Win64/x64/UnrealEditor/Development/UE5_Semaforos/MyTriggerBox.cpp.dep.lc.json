@@ -11,6 +11,12 @@
             "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\engine\\triggerbase.h",
             "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\triggerbase.generated.h",
             "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\triggerbox.generated.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\boxcomponent.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\boxcomponent.generated.h",
+            "d:\\github repos\\ue5_semaforo\\ue5_semaforos\\ue5_semaforos\\source\\ue5_semaforos\\car.h",
+            "d:\\github repos\\ue5_semaforo\\ue5_semaforos\\ue5_semaforos\\intermediate\\build\\win64\\unrealeditor\\inc\\ue5_semaforos\\uht\\car.generated.h",
             "d:\\github repos\\ue5_semaforo\\ue5_semaforos\\ue5_semaforos\\intermediate\\build\\win64\\unrealeditor\\inc\\ue5_semaforos\\uht\\mytriggerbox.generated.h"
         ],
         "ImportedModules": [],

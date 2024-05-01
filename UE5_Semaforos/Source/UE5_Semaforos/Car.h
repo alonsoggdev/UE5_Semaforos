@@ -4,8 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Components/BoxComponent.h"
-
+#include "Components/StaticMeshComponent.h"
 #include "Car.generated.h"
 
 UCLASS()
@@ -18,16 +17,12 @@ public:
 	ACar();
 
 	UPROPERTY(EditAnywhere, Category = "Movement")
-	FVector direction;
+	FVector direction = FVector(0, 1, 0);
 	UPROPERTY(EditAnywhere, Category = "Movement")
-	float speed;
+	float speed = 100;
 
-	UPROPERTY()
-	UBoxComponent* BoxCollider;
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, Category = "Params")
 	UStaticMeshComponent* CubeMesh;
-	UPROPERTY()
-	USceneComponent* DefaultSceneRoot;
 
 protected:
 	// Called when the game starts or when spawned
@@ -36,12 +31,4 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	
-	UFUNCTION()
-	void OverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-
-	UFUNCTION()
-	void OverlapEnd(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
-
-
 };
