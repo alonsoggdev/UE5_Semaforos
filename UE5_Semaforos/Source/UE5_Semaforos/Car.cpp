@@ -8,6 +8,7 @@
 // Sets default values
 ACar::ACar()
 {
+	currentSpeed = speed;
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
@@ -43,7 +44,7 @@ void ACar::Tick(float DeltaTime){
 
 	Super::Tick(DeltaTime);
 
-	FVector NewLocation = GetActorLocation() + (direction * speed * 10 * DeltaTime);
+	FVector NewLocation = GetActorLocation() + (direction * currentSpeed * 10 * DeltaTime);
 	SetActorLocation(NewLocation);
 
 }

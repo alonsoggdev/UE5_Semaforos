@@ -10,6 +10,7 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
+class ACar;
 struct FColor;
 #ifdef UE5_SEMAFOROS_TrafficLight_generated_h
 #error "TrafficLight.generated.h already included, missing '#pragma once' in TrafficLight.h"
@@ -21,6 +22,7 @@ struct FColor;
 #define FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_TrafficLight_h_18_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_TrafficLight_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execManageCars); \
 	DECLARE_FUNCTION(execSwitchColor); \
 	DECLARE_FUNCTION(execNotifyActorEndOverlap); \
 	DECLARE_FUNCTION(execNotifyActorBeginOverlap);

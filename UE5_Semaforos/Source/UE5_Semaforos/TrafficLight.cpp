@@ -2,6 +2,7 @@
 
 
 #include "TrafficLight.h"
+#include "Car.h"
 
 ATrafficLight::ATrafficLight()
 {
@@ -16,9 +17,9 @@ ATrafficLight::ATrafficLight()
 	light->SetupAttachment(sphereCollider);
 	light->LightColor = FColor::Green;
 	light->IntensityUnits = ELightUnits::Lumens;
-	light->Intensity = 2000;
-	light->SourceRadius = 300;
-	light->AttenuationRadius = 200;
+	light->Intensity = 4000;
+	light->SourceRadius = 350;
+	light->AttenuationRadius = 350;
 }
 
 // Called when the game starts or when spawned
@@ -30,6 +31,7 @@ void ATrafficLight::BeginPlay()
 // Called every frame
 void ATrafficLight::Tick(float DeltaTime)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 5, FColor::White, TEXT("Cars in array: ") + CarArray.Num());
 	Super::Tick(DeltaTime);
 }
 
@@ -43,8 +45,12 @@ void ATrafficLight::NotifyActorBeginOverlap(AActor* OtherActor)
 
 		//GEngine->AddOnScreenDebugMessage(-1, 5, FColor::White, TEXT("Cast Car ") + OtherActor->GetName());
 
-		Car->speed = 0;
-		SwitchColor(FColor::Red);
+		
+		if (CarArray.Num() != 0) {
+			ManageCars(Car);
+			Car->currentSpeed = 0;
+			SwitchColor(FColor::Red);
+		}
 
 		//GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, FString::Printf(TEXT("Direction: %s"), *Car->direction.ToString()));
 	}
@@ -58,6 +64,10 @@ void ATrafficLight::NotifyActorEndOverlap(AActor* OtherActor)
 
 void ATrafficLight::SwitchColor(FColor color) {
 	light->SetLightColor(color);
+}
+
+void ATrafficLight::ManageCars(ACar* Car) {
+	CarArray.Emplace(Car);
 }
 
 

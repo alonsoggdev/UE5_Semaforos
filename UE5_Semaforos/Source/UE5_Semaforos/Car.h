@@ -21,6 +21,8 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	float speed = 100;
 
+	float currentSpeed;
+
 	UPROPERTY(EditAnywhere, Category = "Params")
 	UStaticMeshComponent* CubeMesh;
 

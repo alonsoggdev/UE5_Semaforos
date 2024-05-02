@@ -17,12 +17,16 @@ class UE5_SEMAFOROS_API ATrafficLight : public ATriggerSphere
 {
 	GENERATED_BODY()
 public:
+    UPROPERTY(EditAnywhere, Category = "Collider")
 	class USphereComponent* sphereCollider;
 
+    UPROPERTY(EditAnywhere, Category = "Collider")
     float radius = 350;
 
+    UPROPERTY(EditAnywhere, Category = "Light")
     UPointLightComponent* light;
 
+    UPROPERTY(VisibleAnywhere, Category = "Array")
     TArray<ACar*> CarArray;
 
 	ACar* Car;
@@ -45,4 +49,7 @@ public:
 
 	UFUNCTION()
     void SwitchColor(FColor color);
+
+    UFUNCTION()
+    void ManageCars(ACar* Car);
 };
