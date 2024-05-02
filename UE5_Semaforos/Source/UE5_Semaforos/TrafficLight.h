@@ -51,5 +51,5 @@ public:
     void SwitchColor(FColor color);
 
     UFUNCTION()
-    void ManageCars(ACar* Car);
+    void ManageCars(ACar* Car, bool add);
 };

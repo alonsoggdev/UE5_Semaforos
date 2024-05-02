@@ -31,43 +31,45 @@ void ATrafficLight::BeginPlay()
 // Called every frame
 void ATrafficLight::Tick(float DeltaTime)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5, FColor::White, TEXT("Cars in array: ") + CarArray.Num());
 	Super::Tick(DeltaTime);
 }
 
 void ATrafficLight::NotifyActorBeginOverlap(AActor* OtherActor)
 {
-	//if (GEngine != nullptr) GEngine->AddOnScreenDebugMessage(-1, 5, FColor::White, TEXT("Hello from Codded Trigger to ") + OtherActor->GetName());
-
 	Car = Cast<ACar>(OtherActor);
 
 	if (Car) {
 
-		//GEngine->AddOnScreenDebugMessage(-1, 5, FColor::White, TEXT("Cast Car ") + OtherActor->GetName());
-
+		ManageCars(Car, true);
 		
-		if (CarArray.Num() != 0) {
-			ManageCars(Car);
+		if (CarArray.Num() > 1) {
 			Car->currentSpeed = 0;
-			SwitchColor(FColor::Red);
+			//SwitchColor(FColor::Red);
 		}
-
-		//GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, FString::Printf(TEXT("Direction: %s"), *Car->direction.ToString()));
 	}
 
 }
 
 void ATrafficLight::NotifyActorEndOverlap(AActor* OtherActor)
 {
-	//if (GEngine != nullptr) GEngine->AddOnScreenDebugMessage(-1, 5, FColor::White, TEXT("Bye from Codded Trigger to ") + OtherActor->GetName());
+	Car = Cast<ACar>(OtherActor);
+
+	if (Car) {
+		ManageCars(Car, false);
+	}
 }
 
 void ATrafficLight::SwitchColor(FColor color) {
 	light->SetLightColor(color);
 }
 
-void ATrafficLight::ManageCars(ACar* Car) {
-	CarArray.Emplace(Car);
+void ATrafficLight::ManageCars(ACar* newCar, bool add) {
+	if (add) CarArray.Emplace(newCar);
+	else {
+		CarArray.Remove(newCar);
+		if (CarArray.Num() != 0) CarArray[0]->currentSpeed = CarArray[0]->speed;
+	}
+	GEngine->AddOnScreenDebugMessage(-1, 5, FColor::White, FString::Printf(TEXT("Cars in array: %d"), CarArray.Num()));
 }
 
 

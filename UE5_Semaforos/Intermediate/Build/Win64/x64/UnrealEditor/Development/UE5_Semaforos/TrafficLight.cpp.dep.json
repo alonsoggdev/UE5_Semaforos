@@ -1,0 +1,33 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\github repos\\ue5_semaforo\\ue5_semaforos\\ue5_semaforos\\source\\ue5_semaforos\\trafficlight.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\github repos\\ue5_semaforo\\ue5_semaforos\\ue5_semaforos\\intermediate\\build\\win64\\x64\\ue5_semaforoseditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\github repos\\ue5_semaforo\\ue5_semaforos\\ue5_semaforos\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\ue5_semaforos\\definitions.ue5_semaforos.h",
+            "d:\\github repos\\ue5_semaforo\\ue5_semaforos\\ue5_semaforos\\source\\ue5_semaforos\\trafficlight.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\engine\\triggersphere.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\engine\\triggerbase.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\triggerbase.generated.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\triggersphere.generated.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\spherecomponent.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\spherecomponent.generated.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\pointlightcomponent.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\locallightcomponent.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponent.h",
+            "d:\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponentbase.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\lightcomponentbase.generated.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\lightcomponent.generated.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\locallightcomponent.generated.h",
+            "d:\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\pointlightcomponent.generated.h",
+            "d:\\github repos\\ue5_semaforo\\ue5_semaforos\\ue5_semaforos\\source\\ue5_semaforos\\car.h",
+            "d:\\github repos\\ue5_semaforo\\ue5_semaforos\\ue5_semaforos\\intermediate\\build\\win64\\unrealeditor\\inc\\ue5_semaforos\\uht\\car.generated.h",
+            "d:\\github repos\\ue5_semaforo\\ue5_semaforos\\ue5_semaforos\\intermediate\\build\\win64\\unrealeditor\\inc\\ue5_semaforos\\uht\\trafficlight.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

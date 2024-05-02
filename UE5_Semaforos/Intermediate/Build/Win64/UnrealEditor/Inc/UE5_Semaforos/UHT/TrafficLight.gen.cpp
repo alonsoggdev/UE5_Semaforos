@@ -22,9 +22,10 @@ void EmptyLinkFunctionForGeneratedCodeTrafficLight() {}
 	DEFINE_FUNCTION(ATrafficLight::execManageCars)
 	{
 		P_GET_OBJECT(ACar,Z_Param_Car);
+		P_GET_UBOOL(Z_Param_add);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->ManageCars(Z_Param_Car);
+		P_THIS->ManageCars(Z_Param_Car,Z_Param_add);
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(ATrafficLight::execSwitchColor)
@@ -67,8 +68,11 @@ void EmptyLinkFunctionForGeneratedCodeTrafficLight() {}
 		struct TrafficLight_eventManageCars_Parms
 		{
 			ACar* Car;
+			bool add;
 		};
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Car;
+		static void NewProp_add_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_add;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -76,8 +80,14 @@ void EmptyLinkFunctionForGeneratedCodeTrafficLight() {}
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ATrafficLight_ManageCars_Statics::NewProp_Car = { "Car", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(TrafficLight_eventManageCars_Parms, Car), Z_Construct_UClass_ACar_NoRegister, METADATA_PARAMS(0, nullptr) };
+	void Z_Construct_UFunction_ATrafficLight_ManageCars_Statics::NewProp_add_SetBit(void* Obj)
+	{
+		((TrafficLight_eventManageCars_Parms*)Obj)->add = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ATrafficLight_ManageCars_Statics::NewProp_add = { "add", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(TrafficLight_eventManageCars_Parms), &Z_Construct_UFunction_ATrafficLight_ManageCars_Statics::NewProp_add_SetBit, METADATA_PARAMS(0, nullptr) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ATrafficLight_ManageCars_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ATrafficLight_ManageCars_Statics::NewProp_Car,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ATrafficLight_ManageCars_Statics::NewProp_add,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATrafficLight_ManageCars_Statics::Function_MetaDataParams[] = {
@@ -237,7 +247,7 @@ void EmptyLinkFunctionForGeneratedCodeTrafficLight() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ATrafficLight_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_ATrafficLight_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ATrafficLight_ManageCars, "ManageCars" }, // 1250139204
+		{ &Z_Construct_UFunction_ATrafficLight_ManageCars, "ManageCars" }, // 2126153337
 		{ &Z_Construct_UFunction_ATrafficLight_NotifyActorBeginOverlap, "NotifyActorBeginOverlap" }, // 3005435635
 		{ &Z_Construct_UFunction_ATrafficLight_NotifyActorEndOverlap, "NotifyActorEndOverlap" }, // 2252972048
 		{ &Z_Construct_UFunction_ATrafficLight_SwitchColor, "SwitchColor" }, // 1471784102
@@ -328,9 +338,9 @@ void EmptyLinkFunctionForGeneratedCodeTrafficLight() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_TrafficLight_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATrafficLight, ATrafficLight::StaticClass, TEXT("ATrafficLight"), &Z_Registration_Info_UClass_ATrafficLight, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATrafficLight), 3531034666U) },
+		{ Z_Construct_UClass_ATrafficLight, ATrafficLight::StaticClass, TEXT("ATrafficLight"), &Z_Registration_Info_UClass_ATrafficLight, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATrafficLight), 449402225U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_TrafficLight_h_2794602432(TEXT("/Script/UE5_Semaforos"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_TrafficLight_h_1759612819(TEXT("/Script/UE5_Semaforos"),
 		Z_CompiledInDeferFile_FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_TrafficLight_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_TrafficLight_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
