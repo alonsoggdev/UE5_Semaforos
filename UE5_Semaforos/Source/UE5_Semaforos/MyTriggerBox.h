@@ -40,6 +40,4 @@ public:
 
     UFUNCTION()
     virtual void NotifyActorBeginOverlap(AActor* OtherActor);
-    UFUNCTION()
-    virtual void NotifyActorEndOverlap(AActor* OtherActor);
 };

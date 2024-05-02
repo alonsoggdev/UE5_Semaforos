@@ -30,23 +30,8 @@ void AMyTriggerBox::Tick(float DeltaTime)
 
 void AMyTriggerBox::NotifyActorBeginOverlap(AActor* OtherActor)
 {
-	//if (GEngine != nullptr) GEngine->AddOnScreenDebugMessage(-1, 5, FColor::White, TEXT("Hello from Codded Trigger to ") + OtherActor->GetName());
 
 	Car = Cast<ACar>(OtherActor);
 
-	if (Car) {
-
-		//GEngine->AddOnScreenDebugMessage(-1, 5, FColor::White, TEXT("Cast Car ") + OtherActor->GetName());
-
-		Car->direction *= -1;
-
-		//GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, FString::Printf(TEXT("Direction: %s"), *Car->direction.ToString()));
-	}
-
+	if (Car) Car->direction *= -1;
 }
-
-void AMyTriggerBox::NotifyActorEndOverlap(AActor* OtherActor)
-{
-	//if (GEngine != nullptr) GEngine->AddOnScreenDebugMessage(-1, 5, FColor::White, TEXT("Bye from Codded Trigger to ") + OtherActor->GetName());
-}
-

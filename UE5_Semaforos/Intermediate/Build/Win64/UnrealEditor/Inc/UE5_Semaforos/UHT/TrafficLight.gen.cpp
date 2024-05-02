@@ -237,6 +237,10 @@ void EmptyLinkFunctionForGeneratedCodeTrafficLight() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_CarArray_MetaData[];
 #endif
 		static const UECodeGen_Private::FArrayPropertyParams NewProp_CarArray;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_waitTime_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_waitTime;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -293,12 +297,20 @@ void EmptyLinkFunctionForGeneratedCodeTrafficLight() {}
 	};
 #endif
 	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ATrafficLight_Statics::NewProp_CarArray = { "CarArray", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATrafficLight, CarArray), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATrafficLight_Statics::NewProp_CarArray_MetaData), Z_Construct_UClass_ATrafficLight_Statics::NewProp_CarArray_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATrafficLight_Statics::NewProp_waitTime_MetaData[] = {
+		{ "Category", "Config" },
+		{ "ModuleRelativePath", "TrafficLight.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATrafficLight_Statics::NewProp_waitTime = { "waitTime", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATrafficLight, waitTime), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATrafficLight_Statics::NewProp_waitTime_MetaData), Z_Construct_UClass_ATrafficLight_Statics::NewProp_waitTime_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATrafficLight_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATrafficLight_Statics::NewProp_sphereCollider,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATrafficLight_Statics::NewProp_radius,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATrafficLight_Statics::NewProp_light,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATrafficLight_Statics::NewProp_CarArray_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATrafficLight_Statics::NewProp_CarArray,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATrafficLight_Statics::NewProp_waitTime,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ATrafficLight_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ATrafficLight>::IsAbstract,
@@ -338,9 +350,9 @@ void EmptyLinkFunctionForGeneratedCodeTrafficLight() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_TrafficLight_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATrafficLight, ATrafficLight::StaticClass, TEXT("ATrafficLight"), &Z_Registration_Info_UClass_ATrafficLight, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATrafficLight), 449402225U) },
+		{ Z_Construct_UClass_ATrafficLight, ATrafficLight::StaticClass, TEXT("ATrafficLight"), &Z_Registration_Info_UClass_ATrafficLight, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATrafficLight), 2883883658U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_TrafficLight_h_1759612819(TEXT("/Script/UE5_Semaforos"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_TrafficLight_h_2453747144(TEXT("/Script/UE5_Semaforos"),
 		Z_CompiledInDeferFile_FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_TrafficLight_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_TrafficLight_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

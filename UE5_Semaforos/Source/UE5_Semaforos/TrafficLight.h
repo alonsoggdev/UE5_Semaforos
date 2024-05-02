@@ -29,7 +29,12 @@ public:
     UPROPERTY(VisibleAnywhere, Category = "Array")
     TArray<ACar*> CarArray;
 
+    UPROPERTY(EditAnywhere, Category = "Config")
+    float waitTime;
+
 	ACar* Car;
+
+    FTimerHandle TimerHandle_DelayedSpeedUpdate;
 
 	ATrafficLight();
 
@@ -52,4 +57,6 @@ public:
 
     UFUNCTION()
     void ManageCars(ACar* Car, bool add);
+
+    void DelayedSpeedUpdate();
 };

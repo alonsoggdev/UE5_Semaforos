@@ -20,7 +20,6 @@ class AActor;
 #define FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_MyTriggerBox_h_20_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_GITHUB_REPOS_UE5_Semaforo_UE5_Semaforos_UE5_Semaforos_Source_UE5_Semaforos_MyTriggerBox_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execNotifyActorEndOverlap); \
 	DECLARE_FUNCTION(execNotifyActorBeginOverlap);
 
 
