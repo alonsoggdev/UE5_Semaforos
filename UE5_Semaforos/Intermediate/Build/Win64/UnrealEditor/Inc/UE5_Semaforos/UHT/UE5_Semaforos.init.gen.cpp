@@ -17,13 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeUE5_Semaforos_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x11899748,
-				0x889BB66E,
+				0xB060D936,
+				0xEEBCF5EF,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_UE5_Semaforos.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_UE5_Semaforos.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_UE5_Semaforos(Z_Construct_UPackage__Script_UE5_Semaforos, TEXT("/Script/UE5_Semaforos"), Z_Registration_Info_UPackage__Script_UE5_Semaforos, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x11899748, 0x889BB66E));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_UE5_Semaforos(Z_Construct_UPackage__Script_UE5_Semaforos, TEXT("/Script/UE5_Semaforos"), Z_Registration_Info_UPackage__Script_UE5_Semaforos, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xB060D936, 0xEEBCF5EF));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

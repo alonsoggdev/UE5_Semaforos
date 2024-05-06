@@ -132,6 +132,12 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\UE5_Semaforos\TrafficLight.h"/>
+    <ClCompile Include="..\..\Source\UE5_Semaforos\TrafficLightActor.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE5_Semaforos\TrafficLightActor.h"/>
     <None Include="..\..\Source\UE5_Semaforos\UE5_Semaforos.Build.cs"/>
     <ClCompile Include="..\..\Source\UE5_Semaforos\UE5_Semaforos.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
